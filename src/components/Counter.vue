@@ -1,8 +1,8 @@
 <template>
     <div>
-        <button>-</button>
-        <span>{{value}}</span>
-        <button>+</button>
+        <button @click="decrease">-</button>
+        <span>{{ value }}</span>
+        <button @click="increase">+</button>
     </div>
     
 </template>
@@ -16,11 +16,11 @@ export default {
         }
     },
     methods: {
-        add() {
+        increase() {
            this.value++; 
            this.$emit("counterValue",1)
         },
-        delete(){
+        decrease(){
            this.value--;
            this.$emit("counterValue",-1)
         }
